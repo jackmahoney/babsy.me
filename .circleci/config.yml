@@ -10,7 +10,7 @@ jobs:
           command: npm install
       - run:
           name: Deploy to S3
-          command: npx s3-website deploy 
+          command: npm run deploy
 
 workflows:
   version: 2
