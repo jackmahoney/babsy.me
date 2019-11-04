@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "s3-website": "^3.3.0",
+  }
+}

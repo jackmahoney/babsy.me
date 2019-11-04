@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run:
+          name: Install Node dependencies
+          command: npm install
+      - run:
+          name: Deploy to S3
+          command: npx s3-website deploy 
+
+workflows:
+  version: 2
+  deploy_website:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
